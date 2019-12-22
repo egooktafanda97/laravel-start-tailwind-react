@@ -4,6 +4,13 @@ Starter project Laravel with TailwindCSS and ReactJS preset.
 
 ## Quick Start
 
+### Create Project
+
+```
+composer create-project --prefer-dist riipandi/laravel-start-tailwind-react myapp
+```
+
+### Install
 Edit or create `.env` file and then execute:
 
 ```sh
