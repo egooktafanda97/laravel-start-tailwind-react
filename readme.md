@@ -24,6 +24,8 @@ npm install --no-optional --no-audit
 npm run development
 ```
 
+> For detailed explanation on how things work, check out [Laravel docs](https://laravel.com/docs).
+
 ## License
 
 This project licensed under the terms of [Apache License 2.0][choosealicense].
