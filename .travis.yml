@@ -5,9 +5,7 @@ addons:
 
 env:
   matrix:
-    - TRAVIS_NODE_VERSION="8"
-    - COMPOSER_FLAGS="--prefer-lowest"
-    - COMPOSER_FLAGS=""
+    - TRAVIS_NODE_VERSION="10"
 
 matrix:
   fast_finish: true
@@ -20,7 +18,6 @@ notifications:
   email: false
 
 cache:
-  yarn: true
   directories:
     - $HOME/.composer/cache
     - node_modules
@@ -30,7 +27,7 @@ services:
   - redis
 
 before_script:
-  - cp .env.travis .env
+  - cp .env.testing .env
   - php artisan key:generate
   - php artisan migrate:fresh
 
@@ -42,8 +39,8 @@ before_install:
 
 install:
   - travis_retry composer install --no-interaction --optimize-autoloader --no-suggest
-  - travis_retry yarn install
-  - travis_retry yarn production
+  - travis_retry npm install --no-optional --no-audit
+  - travis_retry npm run production
 
 script:
   - vendor/bin/phpunit --coverage-text
