@@ -1,6 +1,6 @@
 <!-- ASIDE -->
 <div id="sidebar"
-  class="w-48 md:w-64 border border-r text-sm h-screen bg-white shadow -mt-4 fixed md:relative"
+  class="w-48 md:w-64 border border-r text-sm min-h-screen h-auto bg-white shadow -mt-4 fixed md:relative"
   x-transition:enter="transition-transform transition-opacity ease-out duration-300"
   x-transition:enter="transition ease-out duration-300"
   x-transition:enter-start="opacity-0 transform -translate-x-2"
