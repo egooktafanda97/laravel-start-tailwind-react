@@ -1,5 +1,10 @@
 # Laravel Start Tailwind React
 
+[![Build Status](https://travis-ci.org/riipandi/laravel-start-tailwind-react.svg?branch=master)](https://travis-ci.org/riipandi/laravel-start-tailwind-react)
+[![StyleCI](https://github.styleci.io/repos/229514178/shield?branch=master)](https://github.styleci.io/repos/235965192)
+[![Latest Stable Version](http://img.shields.io/packagist/v/riipandi/laravel-start-tailwind-react.svg?style=flat)](https://packagist.org/packages/riipandi/laravel-start-tailwind-react)
+[![Total Downloads](http://img.shields.io/packagist/dt/riipandi/laravel-start-tailwind-react.svg?style=flat)](https://packagist.org/packages/riipandi/laravel-start-tailwind-react)
+
 Starter project Laravel with TailwindCSS and ReactJS preset.
 
 ## Quick Start
