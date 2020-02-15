@@ -3,6 +3,9 @@ language: php
 addons:
   mariadb: "10.3"
 
+services:
+  - redis
+
 env:
   matrix:
     - TRAVIS_NODE_VERSION="10"
@@ -14,22 +17,14 @@ matrix:
     - php: "7.3"
     - php: "7.4"
 
-notifications:
-  email: false
-
 cache:
   directories:
     - $HOME/.composer/cache
     - node_modules
     - vendor
 
-services:
-  - redis
-
-before_script:
-  - cp .env.testing .env
-  - php artisan key:generate
-  - php artisan migrate:fresh
+notifications:
+  email: false
 
 before_install:
   - phpenv config-rm xdebug.ini || true
@@ -42,5 +37,10 @@ install:
   - travis_retry npm install --no-optional --no-audit
   - travis_retry npm run production
 
+before_script:
+  - cp .env.testing .env
+
 script:
+  - php artisan key:generate --force --show
+  - php artisan migrate:fresh --seed --force
   - vendor/bin/phpunit --coverage-text
