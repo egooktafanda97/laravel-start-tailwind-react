@@ -46,3 +46,4 @@ before_script:
 script:
   - php artisan migrate:fresh --seed --force
   - vendor/bin/phpunit --coverage-text
+  - cat .env
