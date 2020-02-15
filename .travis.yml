@@ -41,8 +41,8 @@ install:
 
 before_script:
   - cp .env.testing .env
+  - php artisan key:generate --force
 
 script:
-  - php artisan key:generate --force
   - php artisan migrate:fresh --seed --force
   - vendor/bin/phpunit --coverage-text
