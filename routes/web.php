@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes([
+  'register' => true, // Registration Routes...
+  'reset' => true, // Password Reset Routes...
+  'verify' => true, // Email Verification Routes...
+]);
+
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');

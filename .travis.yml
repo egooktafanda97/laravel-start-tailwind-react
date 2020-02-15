@@ -41,7 +41,9 @@ install:
 
 before_script:
   - cp .env.testing .env
+  - php artisan config:clear
   - php artisan key:generate --force
+  - php artisan config:cache
 
 script:
   - php artisan migrate:fresh --seed --force

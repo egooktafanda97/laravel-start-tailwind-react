@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('_layout')
 
 @section('content')
     <div class="flex items-center">

@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name') }}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap">
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none">
   <div class="flex flex-col">
       @if(Route::has('login'))
           <div class="absolute top-0 right-0 mt-4 mr-4">
               @auth
-                  <a href="{{ route('dashboard') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
+                  <a href="{{ route('dashboard') }}" class="no-underline hover:underline text-sm font-semibold text-teal-800 uppercase">{{ __('Home') }}</a>
               @else
-                  <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase pr-6">{{ __('Login') }}</a>
+                  <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-semibold text-teal-800 uppercase pr-6">{{ __('Login') }}</a>
                   @if (Route::has('register'))
-                      <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>
+                      <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-semibold text-teal-800 uppercase">{{ __('Register') }}</a>
                   @endif
               @endauth
           </div>

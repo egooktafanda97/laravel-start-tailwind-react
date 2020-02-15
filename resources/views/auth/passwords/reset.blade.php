@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('auth._layout')
 
 @section('content')
+  <div class="h-screen w-screen bg-indigo-600 flex justify-center content-center flex-wrap">
     <div class="container mx-auto">
         <div class="flex flex-wrap justify-center">
             <div class="w-full max-w-sm">
@@ -62,4 +63,5 @@
             </div>
         </div>
     </div>
+  </div>
 @endsection

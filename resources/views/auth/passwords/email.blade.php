@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@extends('auth._layout')
 
 @section('content')
+  <div class="h-screen w-screen bg-indigo-600 flex justify-center content-center flex-wrap">
     <div class="container mx-auto">
         <div class="flex flex-wrap justify-center">
             <div class="w-full max-w-sm">
@@ -36,11 +37,10 @@
 
                         <div class="flex flex-wrap">
                             <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-gray-100 font-bold py-3 px-auto rounded focus:outline-none focus:shadow-outline">
-                                {{ __('Send Password Reset Link') }}
+                                {{ __('Send Magic Link') }}
                             </button>
-
-                            <p class="w-full text-xs text-center text-grey-dark mt-8 -mb-4">
-                                <a class="text-blue-500 hover:text-blue-700 no-underline" href="{{ route('login') }}">
+                            <p class="w-full text-xs text-center text-gray-700 mt-8">
+                                <a class="text-sm text-blue-500 hover:text-blue-700 whitespace-no-wrap no-underline ml-auto" href="{{ route('login') }}">
                                     {{ __('Back to login') }}
                                 </a>
                             </p>
@@ -50,4 +50,5 @@
             </div>
         </div>
     </div>
+  </div>
 @endsection
