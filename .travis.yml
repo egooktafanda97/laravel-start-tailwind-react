@@ -29,6 +29,7 @@ notifications:
 before_install:
   - phpenv config-rm xdebug.ini || true
   - printf "\n" | pecl install -f redis
+  - printf "\n" | pecl install -f memcache
   - printf "\n" | pecl install -f xdebug
   - travis_retry composer self-update
   - mysql -e 'CREATE DATABASE IF NOT EXISTS testing;'
@@ -42,6 +43,6 @@ before_script:
   - cp .env.testing .env
 
 script:
-  - php artisan key:generate --force --show
+  - php artisan key:generate --force
   - php artisan migrate:fresh --seed --force
   - vendor/bin/phpunit --coverage-text
